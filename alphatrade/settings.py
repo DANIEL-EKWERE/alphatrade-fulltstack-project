@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-$$riv5w)o1_966i6n((c%=*$ny1f-@a+%xn6y2b+==4p**p-)w
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['https://alphatrade.onrender.com','http://127.0.0.1:8000/']
 
 
 # Application definition
