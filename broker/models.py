@@ -34,7 +34,8 @@ class Histotry(models.Model):
 class Deposit(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     amount = models.CharField(max_length=50)
-    wallet_Address = models.CharField(max_length=100)
+    wallet_Address = models.CharField(max_length=100,blank=True, null=True)
+    cryptomus_uuid = models.UUIDField(blank=True, null=True)
     status = models.CharField(default="PENDING", max_length=50,choices=[('PENDING','PENDING'),('DECLINED','DECLINED'),('APPROVED','APPROVED')])
     date = models.DateTimeField(auto_now_add=True)
 

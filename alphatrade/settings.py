@@ -82,9 +82,13 @@ WSGI_APPLICATION = 'alphatrade.wsgi.application'
 #         'NAME': BASE_DIR / 'db.sqlite3',
 #     }
 # }
+
+
 DATABASES = {
     'default': dj_database_url.parse("postgresql://alpha_trade_user:91XO3T8NOd60sPeyPtDQitHMwDpVZNPL@dpg-ct0um5btq21c73ejdtt0-a.oregon-postgres.render.com/alpha_trade")
 }
+
+
 #DATABASES["default"] = dj_database_url.parse("postgresql://alpha_trade_user:91XO3T8NOd60sPeyPtDQitHMwDpVZNPL@dpg-ct0um5btq21c73ejdtt0-a.oregon-postgres.render.com/alpha_trade")
 
 # Password validation

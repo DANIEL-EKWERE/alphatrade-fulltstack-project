@@ -1,8 +1,11 @@
 from django.urls import path
 from .views import *
+from . import api
+
 
 urlpatterns = [
     path('', index, name='home'),
+    path('api/create_support/', api.create_support, name='api_create_support'),
     path('dashboard/', dashboard, name='dashboard'),
     path('profile/', profile, name='profile'),
     path('deposit/', deposit, name='deposit'),

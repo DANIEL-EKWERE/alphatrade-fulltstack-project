@@ -14,7 +14,9 @@ Deposit
         <img src="{% static 'img/download.png' %}" alt="Bank Transfer Icon">
         <h2>Transfer to Site</h2>
         <p>Limit: 1 - 100,000 USD</p>
-        <a href="{% url 'deposit-crypto' %}"><button class="deposit-button">Deposit</button></a>
+        {% comment %} <a href="{% url 'deposit-crypto' %}"> {% endcomment %}
+          <button class="deposit-button" onclick="buy(50)" >Deposit</button>
+        {% comment %} </a> {% endcomment %}
       </div>
       <!-- Cryptocurrency Card -->
       <div class="option-card" data-aos="fade-right">
@@ -27,4 +29,38 @@ Deposit
     </div>
   </div>
 
+{% endblock %}
+
+
+{% block scripts %}
+<script>
+    console.log('Creator page');
+
+    async function buy(amount) {
+        console.log('Buy', amount);
+
+        const csrftoken = document.querySelector('[name=csrfmiddlewaretoken]').value;
+        const creatorId = document.getElementById('creator_id').value;
+        const email = document.getElementById('id_email').value;
+
+        const formData = new FormData();
+        formData.append('email', email);
+        formData.append('creator_id', creatorId);
+        formData.append('amount', amount);
+
+        const response = await fetch('/api/create_support/', {
+            method: 'POST',
+            headers: {
+                'X-CSRFToken': csrftoken
+            },
+            body: formData
+        });
+
+        const data = await response.json();
+
+        console.log('data:', data);
+
+        window.location.href = data.url;
+    }
+</script>
 {% endblock %}
