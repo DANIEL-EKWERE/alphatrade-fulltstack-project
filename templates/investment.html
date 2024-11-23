@@ -1,0 +1,45 @@
+{% extends "base.html" %}
+
+{% block title %}Investment{% endblock title %}
+
+{% block content %}
+
+<div class="table-container">
+    <table class="transaction-table">
+      <thead>
+        <tr>
+            <th>Capital</th>
+          <th>Daily Profit</th>
+          <th>Weekly Profit</th>
+          <th>Monthly Profit</th>
+          <th>Bonus</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+            <td>{{investment.capital}}</td>
+            <td>{{investment.daily}}</td>
+            <td>{{investment.weekly}}</td>
+            <td>{{investment.monthly}}</td>
+          <td>$10</td>
+        </tr>
+        {% comment %} <tr>
+          <td>Jane Smith</td>
+          <td>2024-11-14</td>
+          <td>$1,000</td>
+          <td>$100</td>
+          <td>$1,100</td>
+        </tr>
+        <tr>
+          <td>Michael Brown</td>
+          <td>2024-11-13</td>
+          <td>$700</td>
+          <td>$70</td>
+          <td>$770</td>
+        </tr> {% endcomment %}
+      </tbody>
+    </table>
+  </div>
+</section>
+
+{% endblock content %}

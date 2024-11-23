@@ -14,6 +14,7 @@ class Dashboard(models.Model):
     total_withdraw = models.IntegerField(default=0.0)
     referral_balance = models.IntegerField(default=0.0)
     referral_code = models.CharField(default=0,max_length=10)
+    date = models.DateField(auto_now_add=True)
 
     def __str__(self):
         return self.user.username
@@ -23,6 +24,7 @@ class Histotry(models.Model):
     amount = models.CharField(max_length=50)
     date = models.DateField(auto_now_add=True)
     tType = models.CharField(default="N/A", max_length=50)
+    wallet_Address = models.CharField(default="N/A", max_length=100)
     status = models.CharField(max_length=50,choices=[('PENDING','PENDING'),('DECLINED','DECLINED'),('APPROVED','APPROVED')],default='PENDING')
 
     def __str__(self):
@@ -37,7 +39,7 @@ class Deposit(models.Model):
     date = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
-        return self.user.name
+        return self.user.username
 
 
 class Withdraw(models.Model):
@@ -48,7 +50,7 @@ class Withdraw(models.Model):
     date = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
-        return self.user.name
+        return self.user.username
 
 
 class Account(models.Model):
@@ -68,7 +70,7 @@ class Account(models.Model):
 
 
 class Investment(models.Model):
-    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    user = models.OneToOneField(User, on_delete=models.CASCADE)
     capital = models.CharField(max_length=50)
     daily = models.CharField(max_length=50)
     weekly = models.CharField(max_length=50)

@@ -15,24 +15,24 @@ Dashboard
         <div class="referral" id="copy">
           Referral ID: <strong id="referral-id">{{profile.referral}}</strong>
           <button class="copy-btn" onclick="copyToClipboard()" >Copy</button>
-        </div>user.
+        </div>
       </header>
   
       <div class="grid">
         <!-- Deposit Wallet Balance -->
         <div class="card" data-aos="fade-up">
           <div class="card-icon">&#128178;</div>
-          <h5>{{details.deposit_wallet_balance}}</h5>
+          <h5>${{details.deposit_wallet_balance}}</h5>
           <p>Deposit Wallet Balance</p>
-          <p class="date">11/13/2024</p>
+          <p class="date">{{details.date}}</p>
         </div>
   
         <!-- Interest Wallet Balance -->
         <div class="card" data-aos="fade-up">
           <div class="card-icon">&#128200;</div>
-          <h5>{{details.interest_wallet_balance}}</h5>
+          <h5>${{details.interest_wallet_balance}}</h5>
           <p>Interest Wallet Balance</p>
-          <p class="date">11/13/2024</p>
+          <p class="date">{{details.date}}</p>
         </div>
   
         <!-- Total Invest Balance -->
@@ -40,31 +40,31 @@ Dashboard
           <div class="card-icon">&#127873;</div>
           <h5>${{details.total_invest_balance}}</h5>
           <p>Total Invest Balance</p>
-          <p class="date">11/13/2024</p>
+          <p class="date">{{details.date}}</p>
         </div>
   
         <!-- Total Deposit -->
         <div class="card" data-aos="fade-up">
           <div class="card-icon">&#128179;</div>
-          <h5>{{details.total_deposit}}</h5>
+          <h5>${{details.total_deposit}}</h5>
           <p>Details Total Deposit</p>
-          <p class="date">11/13/2024</p>
+          <p class="date">{{details.date}}</p>
         </div>
   
         <!-- Total Withdraw -->
         <div class="card" data-aos="fade-up">
           <div class="card-icon">&#127970;</div>
-          <h5>{{details.total_withdraw}}</h5>
+          <h5>${{details.total_withdraw}}</h5>
           <p>Total Withdraw</p>
-          <p class="date">11/13/2024</p>
+          <p class="date">{{details.date}}</p>
         </div>
   
         <!-- Referral Balance -->
         <div class="card" data-aos="fade-up">
           <div class="card-icon">&#128101;</div>
-          <h5>{{details.referral_balance}}</h5>
+          <h5>${{details.referral_balance}}</h5>
           <p>Referral Balance</p>
-          <p class="date">11/13/2024</p>
+          <p class="date">{{Details.date}}</p>
         </div>
       </div>
     </div>
@@ -85,32 +85,40 @@ Dashboard
               </tr>
             </thead>
             <tbody>
-              <tr>
-                <td>2024/11/13</td>
-                <td>$1,000</td>
-                <td><span class="badge pending">Pending</span></td>
-              </tr>
-              <tr>
-                <td>2024/11/13</td>
-                <td>$100</td>
-                <td><span class="badge pending">Pending</span></td>
-              </tr>
-              <tr>
-                <td>2024/11/13</td>
-                <td>$200</td>
-                <td><span class="badge pending">Pending</span></td>
-              </tr>
+              {% if deposits %}
+                {% for deposit in deposits %}
+                 
+                  <tr>
+                    <td>{{ deposit.date }}</td>
+                    <td>${{ deposit.amount }}</td>
+                  {% if deposit.status == "PENDING" %}<td><span class="badge pending">{{ deposit.status }}</span></td> {% elif deposit.status == "APPROVED" %}<td><span class="badge approve" style="padding: 5px 10px;
+    border-radius: 20px;
+    font-size: 12px;
+    color: #fff; background-color: #00571a;">{{ deposit.status }}</span></td> {% else %}<td><span class="badge decline" style="padding: 5px 10px;
+      border-radius: 20px;
+      font-size: 12px;
+      color: #fff; background-color: #ff0707;">{{ deposit.status }}</span></td>{% endif %}
+                  </tr>
+                 
+                  
+                {% endfor %}
+              {% else %}
+                <tr>
+                  <td colspan="3">No records yet</td>
+                </tr>
+              {% endif %}
             </tbody>
           </table>
         </div>
       </div>
     </div>
+    
   
   
-    <div class="deposit-history"></div>
-      <!-- <h3>Stats</h3> -->
+    <div class="deposit-history">
+      {% comment %} <h3>Stats</h3> {% endcomment %}
       <div class="table-card">
-        <h4>Withdrawal History</h4>
+        <h4>Withdraw History</h4>
         <div class="table-container">
           <table>
             <thead>
@@ -121,21 +129,28 @@ Dashboard
               </tr>
             </thead>
             <tbody>
-              <tr>
-                <td>2024/11/13</td>
-                <td>$1,000</td>
-                <td><span class="badge pending">Pending</span></td>
-              </tr>
-              <tr>
-                <td>2024/11/13</td>
-                <td>$100</td>
-                <td><span class="badge pending">Pending</span></td>
-              </tr>
-              <tr>
-                <td>2024/11/13</td>
-                <td>$200</td>
-                <td><span class="badge pending">Pending</span></td>
-              </tr>
+              {% if withdraws %}
+                {% for withdraw in withdraws %}
+                  
+                  <tr>
+                    <td>{{ withdraw.date }}</td>
+                    <td>${{ withdraw.amount }}</td>
+                    {% if withdraw.status == "PENDING" %}<td><span class="badge pending">{{ withdraw.status }}</span></td> {% elif withdraw.status == "APPROVED" %}<td><span class="badge approve" style="padding: 5px 10px;
+                      border-radius: 20px;
+                      font-size: 12px;
+                      color: #fff; background-color: #00571a;">{{ withdraw.status }}</span></td> {% else %}<td><span class="badge decline" style="padding: 5px 10px;
+                        border-radius: 20px;
+                        font-size: 12px;
+                        color: #fff; background-color: #ff0707;">{{ withdraw.status }}</span></td>
+                  </tr>
+                  {% endif %}
+                  
+                {% endfor %}
+              {% else %}
+                <tr>
+                  <td colspan="3">No records yet</td>
+                </tr>
+              {% endif %}
             </tbody>
           </table>
         </div>

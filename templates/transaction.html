@@ -13,7 +13,7 @@ Transaction
       <p>Stay updated on your recent financial transactions. Track your deposits, withdrawals, and profits seamlessly.</p>
     </header>
     
-    <div class="table-container">
+    {% comment %} <div class="table-container">
       <table class="transaction-table">
         <thead>
           <tr>
@@ -49,6 +49,107 @@ Transaction
         </tbody>
       </table>
     </div>
-  </section>
+  </section> {% endcomment %}
+
+
+
+
+
+
+  <div class="deposit-history">
+    {% comment %} <h3>Stats</h3> {% endcomment %}
+    <div class="table-card">
+      <h4>Deposit History</h4>
+      <div class="table-container">
+        <table>
+          <thead>
+            <tr>
+              <th>Date</th>
+              <th>Amount</th>
+              <th>Status</th>
+            </tr>
+          </thead>
+          <tbody>
+            {% if deposits %}
+              {% for deposit in deposits %}
+                {% if deposit.amount == 0 %}
+                <tr>
+                  <td colspan="3">No records yet</td>
+                </tr>
+                {% else %}
+                <tr>
+                  <td>{{ deposit.date }}</td>
+                  <td>${{ deposit.amount }}</td>
+                {% if deposit.status == "PENDING" %}<td><span class="badge pending">{{ deposit.status }}</span></td> {% elif deposit.status == "APPROVED" %}<td><span class="badge approve" style="padding: 5px 10px;
+  border-radius: 20px;
+  font-size: 12px;
+  color: #fff; background-color: #00571a;">{{ deposit.status }}</span></td> {% else %}<td><span class="badge decline" style="padding: 5px 10px;
+    border-radius: 20px;
+    font-size: 12px;
+    color: #fff; background-color: #ff0707;">{{ deposit.status }}</span></td>{% endif %}
+                </tr>
+                {% endif %}
+                
+              {% endfor %}
+            {% else %}
+              <tr>
+                <td colspan="3">No records yet</td>
+              </tr>
+            {% endif %}
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+  
+
+
+  <div class="deposit-history">
+    {% comment %} <h3>Stats</h3> {% endcomment %}
+    <div class="table-card">
+      <h4>Withdraw History</h4>
+      <div class="table-container">
+        <table>
+          <thead>
+            <tr>
+              <th>Date</th>
+              <th>Amount</th>
+              <th>Status</th>
+            </tr>
+          </thead>
+          <tbody>
+            {% if withdraws %}
+              {% for withdraw in withdraws %}
+                {% if withdraw.amount == 0 %}
+                <tr>
+                  <td colspan="3">No records yet</td>
+                </tr>
+                {% else %}
+                <tr>
+                  <td>{{ withdraw.date }}</td>
+                  <td>${{ withdraw.amount }}</td>
+                  {% if withdraw.status == "PENDING" %}<td><span class="badge pending">{{ withdraw.status }}</span></td> {% elif withdraw.status == "APPROVED" %}<td><span class="badge approve" style="padding: 5px 10px;
+                    border-radius: 20px;
+                    font-size: 12px;
+                    color: #fff; background-color: #00571a;">{{ withdraw.status }}</span></td> {% else %}<td><span class="badge decline" style="padding: 5px 10px;
+                      border-radius: 20px;
+                      font-size: 12px;
+                      color: #fff; background-color: #ff0707;">{{ withdraw.status }}</span></td>{% endif %}
+                </tr>
+                {% endif %}
+                
+              {% endfor %}
+            {% else %}
+              <tr>
+                <td colspan="3">No records yet</td>
+              </tr>
+            {% endif %}
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+
 
 {% endblock %}

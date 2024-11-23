@@ -3,7 +3,7 @@ from django.shortcuts import render, redirect
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import User
 from django.contrib.auth import logout,login, authenticate
-from broker.models import Account, Dashboard, Histotry, Withdraw,Deposit
+from broker.models import Account, Dashboard, Histotry, Withdraw,Deposit, Investment
 from django.contrib import messages
 # Create your views here.
 
@@ -28,8 +28,8 @@ def dashboard(request):
     pending = None
     approved = None
     cancelled = None
-    deposit = None
-    withdraw = None
+    deposits = None
+    withdraws = None
     profile = None
 
     try:
@@ -41,10 +41,14 @@ def dashboard(request):
         # approved = Histotry.objects.filter(user=user, tType="APPROVED")
         # cancelled = Histotry.objects.filter(user=user, tType="CANCELLED")
 
-        # deposit = Deposit.objects.filter(user=user)
-        # withdraw = Withdraw.objects.filter(user=user)
+        deposits = Deposit.objects.filter(user=user).order_by("-date")
+        withdraws = Withdraw.objects.filter(user=user)
         profile = Account.objects.get(user=user)
-        print(profile)
+        
+        # if withdraws.amount == 0.0:
+        #     print(0)
+        # else:
+        #     print("its not")
     except ObjectDoesNotExist:
         # Handle case where Dashboard or related objects do not exist
         print("No Dashboard object or related data found for the user.",user)
@@ -58,8 +62,8 @@ def dashboard(request):
             'pending': pending,
             'approved': approved,
             'cancelled': cancelled,
-            'deposit': deposit,
-            'withdraw':withdraw,
+            'deposits': deposits,
+            'withdraws':withdraws,
             'profile':profile,
         }
     )
@@ -79,11 +83,18 @@ def withdraw(request):
 @login_required
 def withdrawcrypto(request):
     user = request.user
-
+    dashboard = None
+    errors = []
     if request.method == "POST":
             amount = request.POST.get('amount')
             address = request.POST.get('copy')
-
+            try:
+                dashboard = Dashboard.objects.get(user=user)
+                if int(dashboard.deposit_wallet_balance) < int(amount):
+                    errors.append("your account balance is not sufficient to place this withdrawal")
+                    return render(request, 'withdraw-crypto.html',{'errors':errors})
+            except ObjectDoesNotExist:
+                dashboard = None
             withdraw = Withdraw.objects.create(
                 user=user,
                 amount=amount,
@@ -191,14 +202,17 @@ def signup(request):
         )
         Dashboard.objects.create(
             user=user,
-            Deposit_Wallet_Balance=10.0,
-            Interest_Wallet_Balance=0.0,
-            Total_invest_Balance=0.0,
-            Total_Deposit=0.0,
-            Total_Withdraw=0.0,
-            Referral_code=referrer
+            deposit_wallet_balance=10.0,
+            interest_wallet_balance=0.0,
+            total_invest_balance=0.0,
+            total_deposit=0.0,
+            total_withdraw=0.0,
+            referral_balance=0.0,
+            referral_code=referrer
 
         )
+        # Deposit.objects.create(user=user,amount=0.0,wallet_Address="N/A",status="PENDING")
+        # Withdraw.objects.create(user=user,amount=0.0,wallet_Address="N/A",status="PENDING")
 
 
         login(request, user)
@@ -242,17 +256,26 @@ def about(request):
 @login_required
 def transaction(request):
     user = request.user
-
+    deposits = None
+    withdraws = None
     try:
-        history = Histotry.objects.get(user=user)
+        history = Histotry.objects.filter(user=user)
+        deposits = Deposit.objects.filter(user=user).order_by("-date")
+        withdraws = Withdraw.objects.filter(user=user)
     except ObjectDoesNotExist:
         history = None
 
-    return render(request, 'transaction.html')
+    return render(request, 'transaction.html',{'history':history,'deposits':deposits,'withdraws':withdraws})
 
 @login_required
 def investment(request):
-    return render(request, 'investment.html')
+    user = request.user
+    investment = None
+    try:
+        investment = Investment.objects.get(user=user)
+    except ObjectDoesNotExist:
+        investment = None
+    return render(request, 'investment.html',{'investment':investment})
 
 def signout(request):
     logout(request)

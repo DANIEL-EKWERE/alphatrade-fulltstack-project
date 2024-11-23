@@ -1723,6 +1723,14 @@ align-items: flex-start;
   .badge.pending {
     background-color: #ffc107; /* Yellow for pending status */
   }
+
+  .badge.decline {
+    background-color: #ff0707; /* Yellow for pending status */
+  }
+
+  .badge.approve {
+    background-color: #00571a; /* Yellow for pending status */
+  }
   
   /* Responsive Adjustments */
   @media (max-width: 768px) {

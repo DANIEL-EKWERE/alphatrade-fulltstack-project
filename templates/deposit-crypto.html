@@ -9,7 +9,8 @@ Deposit Crypto
 
     <div class="container3">
         <h1>Cryptocurrency</h1>
-        <form class="deposit-form">
+        <form class="deposit-form" action="." method="post">
+          {% csrf_token %}
           <input type="text" placeholder="Amount" name="amount" id="amount" required>
           <input type="text" value="TWRUUUCpVMV7e9HZiHxYVPSmLWT4u6KAbG" id="copy" name="copy" readonly onclick="copyToClipboard()">
           <select>

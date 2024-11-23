@@ -9,8 +9,19 @@ Withdraw Crypto
 <center>
 
     <div class="container3">
+      {% if errors %}
+      <ul>
+          {% for error in errors %}
+              <li style="padding: 5px 10px;
+              border-radius: 20px;
+              font-size: 12px;
+              color: #fff; background-color: #ff0707;">{{ error }}</li>
+          {% endfor %}
+      </ul>
+  {% endif %}
         <h1>Cryptocurrency</h1>
-        <form class="deposit-form">
+        <form class="deposit-form" action="." method="post">
+          {% csrf_token %}
           <input type="text" placeholder="Amount" name="amount" id="amount" required>
           <input type="text" placeholder="Wallet Address" required name="copy" id="copy" >
           <select>
