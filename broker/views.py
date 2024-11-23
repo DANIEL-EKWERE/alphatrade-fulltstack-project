@@ -3,7 +3,7 @@ from django.shortcuts import render, redirect
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import User
 from django.contrib.auth import logout,login, authenticate
-from broker.models import Account, Dashboard, Histotry, Withdraw,Deposit, Investment
+from broker.models import Account, Dashboard, Histotry, Withdraw,Deposit, Investment,ContactUs
 from django.contrib import messages
 # Create your views here.
 
@@ -244,6 +244,18 @@ def plans(request):
 
 
 def contactus(request):
+    if request.method == "POST":
+        fullName = request.POST.get("fullName")
+        email = request.POST.get("email")
+        message = request.POST.get("Message")
+
+        ContactUs.objects.create(
+            full_name=fullName,
+            email=email,
+            message=message
+        )
+        return redirect("/")
+
     return render(request, 'contact.html')
 
 def about(request):
