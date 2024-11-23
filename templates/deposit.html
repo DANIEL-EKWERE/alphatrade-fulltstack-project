@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}
+Deposit
+{% endblock %}
+
+{% block content %}
+
+<div class="container2">
+    <h1 data-aos="fade-down">Deposit</h1>
+    <div class="deposit-options">
+      <!-- Bank Transfer Card -->
+      <div class="option-card" data-aos="fade-left">
+        <img src="{% static 'img/download.png' %}" alt="Bank Transfer Icon">
+        <h2>Transfer to Site</h2>
+        <p>Limit: 1 - 100,000 USD</p>
+        <a href="{% url 'deposit-crypto' %}"><button class="deposit-button">Deposit</button></a>
+      </div>
+      <!-- Cryptocurrency Card -->
+      <div class="option-card" data-aos="fade-right">
+        <img src="{% static 'img/images.png' %}" alt="Cryptocurrency Icon">
+        <h2>CRYPTOCURRENCY</h2>
+        <p>Limit: 1 - 100,000 USD</p>
+        <a href="{% url 'deposit-crypto' %}"><button class="deposit-button">Deposit</button></a>
+        
+      </div>
+    </div>
+  </div>
+
+{% endblock %}

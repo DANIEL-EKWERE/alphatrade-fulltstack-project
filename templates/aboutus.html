@@ -1,0 +1,214 @@
+
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}
+About
+{% endblock %}
+ 
+{% block content %}
+
+    <!-- aboutus hero  -->
+    <section class="gridSection">
+        <div class="sectionDesc aboutusDesc">
+            <h1 data-aos="fade-up" class="headline">
+                The Company History
+            </h1>
+            <p data-aos="fade-up" class="sub-headline">
+                It is the perfect spot get started with your company. 
+                It can be the first thing that people see and it will set 
+                the tone for their experience with your company.
+            </p>
+        </div>
+        <div class="sectionPic bouncepic aboutusPic" id="sectionPic">
+            <img data-aos="fade-up" src="{% static 'img/about-hero.png' %}" alt="">
+        </div>
+    </section>
+
+ 
+
+
+    <!-- About us status -->
+    <div class="statusContainer" data-aos="fade-up">
+        <div class="status">
+            <h1 data-aos="fade-up"><b>360</b> Client</h1>
+            <p data-aos="fade-up">An about page is a key component of every website.</p>
+        </div>
+
+        <div data-aos="fade-up" class="status">
+            <h1 data-aos="fade-up"><b>150+</b> Projects</h1>
+            <p data-aos="fade-up">Page is the first page a visitor sees when they visit your website.</p>
+        </div>
+
+        <div data-aos="fade-up" class="status">
+            <h1 data-aos="fade-up"><b>20+</b> Countries</h1>
+            <p data-aos="fade-up">It is the perfect spot to get started with your company.</p>
+        </div>
+    </div>
+
+    <div class="services" data-aos="fade-up">
+        <div class="aboutusimgContainer">
+            <img data-aos="fade-up" src="{% static 'img/about-image-1.jpg' %}" alt="">
+            <img data-aos="fade-up" src="{% static 'img/about-image-2.jpg' %}" alt="">
+        </div>
+
+        <div class="offers" data-aos="fade-up">
+            <div class="eachOffer">
+                <img data-aos="fade-up" src="{% static 'img/fast-forward-icon-white.svg' %}" alt="">
+                <div class="offerDesc">
+                    <h1>Fast Management</h1>
+                    <p>The Complete Guide to Management and How to Implement it Quickly and Effectively</p>
+                </div>
+            </div>
+
+            <div class="eachOffer" data-aos="fade-up">
+                <img data-aos="fade-up" src="{% static 'img/support-agent-icon-white.svg' %}" alt="">
+                <div class="offerDesc">
+                    <h1>Best Support</h1>
+                    <p>The Best Support for Online crypto & How to Craft a Compelling Description</p>
+                </div>
+            </div>
+
+            <div class="eachOffer" data-aos="fade-up">
+                <img data-aos="fade-up" src="{% static 'img/progress-warning-icon-white.svg' %}" alt="">
+                <div class="offerDesc">
+                    <h1>Best Progress</h1>
+                    <p>What is a Crypto-Mining Malware and Why You MUST Protect Against Them</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <!-- Play Video -->
+       <section class="videoSection">
+            <h1 class="videoSectionHeader">Play The Video.</h1>
+           <div class="videoContainer">
+            <div class="video">
+                <img data-aos="fade-up" src="{% static 'img/about-video.jpg' %}" class="thumbnail" alt="">
+                <img data-aos="fade-up" src="{% static 'img/video-play-icon-white.svg' %}" class="playIcon" alt="">
+            </div>
+            <p>
+            Crypto mining has become more popular with people
+            from all walks of life and across the world.
+            This article will teach you how to mine crypto
+            without having to buy expensive hardware or pay
+            exorbitant electricity bills.
+            </p>
+           </div>
+       </section>
+
+       <!-- Carousel -->
+    <section class="teamSection">
+        <h1 class="sectionHeader">Our Strong & Creative Team</h1>
+        <div class="carouselContainer">
+            <div class="eachCarousel eachTeam">
+                <div class="teamPic">
+                    <img data-aos="fade-up" src="{% static 'img/team-image-1.jpg' %}" alt="">
+                    <div class="teamSocialLink">
+                        <img data-aos="fade-up" src="{% static 'img/Facebook_black.svg' %}" alt="">
+                        <img data-aos="fade-up" src="{% static 'img/Vimeo_black.svg' %}" alt="">
+                        <img data-aos="fade-up" src="{% static 'img/Twitter_black.svg' %}" alt="">
+                        <img data-aos="fade-up" src="{% static 'img/Instagram_black.svg' %}" alt="">
+                    </div>
+                </div>
+                <div class="teamDesc">
+                    <h1 class="teamName">Rebecca Walters</h1>
+                    <p class="position">UI UX Designer</p>
+                </div>
+
+            </div>
+    
+            <div data-aos="fade-up" class="eachCarousel eachTeam">
+                <div class="teamPic">
+                    <img data-aos="fade-up" src="{% static 'img/team-image-2.jpg'  %}" alt="">
+                    <div class="teamSocialLink">
+                        <img data-aos="fade-up" src="{% static 'img/Facebook_black.svg' %}" alt="">
+                        <img data-aos="fade-up" src="{% static 'img/Vimeo_black.svg' %}" alt="">
+                        <img data-aos="fade-up" src="{% static 'img/Twitter_black.svg' %}" alt="">
+                        <img data-aos="fade-up" src="{% static 'img/Instagram_black.svg' %}" alt="">
+                    </div>
+                </div>
+                <div class="teamDesc">
+                    <h1 data-aos="fade-up" class="teamName">Richard Taylor</h1>
+                    <p data-aos="fade-up" class="position">Developer</p>
+                </div>
+            </div>
+    
+            <div data-aos="fade-up" class="eachCarousel eachTeam">
+                <div class="teamPic">
+                    <img data-aos="fade-up" src="{% static 'img/team-image-3.jpg' %}" alt="">
+                    <div class="teamSocialLink">
+                        <img data-aos="fade-up" src="{% static 'img/Facebook_black.svg' %}" alt="">
+                        <img data-aos="fade-up" src="{% static 'img/Vimeo_black.svg' %}" alt="">
+                        <img data-aos="fade-up" src="{% static 'img/Twitter_black.svg' %}" alt="">
+                        <img data-aos="fade-up" src="{% static 'img/Instagram_black.svg' %}" alt="">
+                    </div>
+                </div>
+                <div data-aos="fade-up" class="teamDesc">
+                    <h1 data-aos="fade-up" class="teamName">Bertha Earley</h1>
+                    <p data-aos="fade-up" class="position">Content writer</p>
+                </div>
+            </div>
+    
+            <div class="eachCarousel eachTeam">
+                <div data-aos="fade-up" class="teamPic">
+                    <img data-aos="fade-up" src="{% static 'img/team-image-1.jpg' %}" alt="">
+                    <div data-aos="fade-up" class="teamSocialLink">
+                        <img data-aos="fade-up" src="{% static 'img/Facebook_black.svg' %}" alt="">
+                        <img data-aos="fade-up" src="{% static 'img/Vimeo_black.svg' %}" alt="">
+                        <img data-aos="fade-up" src="{% static 'img/Twitter_black.svg' %}" alt="">
+                        <img data-aos="fade-up" src="{% static 'img/Instagram_black.svg' %}" alt="">
+                    </div>
+                </div>
+                <div data-aos="fade-up" class="teamDesc" data-aos="fade-up">
+                    <h1 data-aos="fade-up" class="teamName" data-aos="fade-up">Rebecca Walters</h1>
+                    <p data-aos="fade-up" class="position" data-aos="fade-up">UI UX Designer</p>
+                </div>
+
+            </div>
+    
+            <div data-aos="fade-up" class="eachCarousel eachTeam" data-aos="fade-up">
+                <div data-aos="fade-up" class="teamPic" data-aos="fade-up">
+                    <img data-aos="fade-up" src="{% static 'img/team-image-2.jpg' %}" alt="">
+                    <div class="teamSocialLink">
+                        <img data-aos="fade-up" src="{% static 'img/Facebook_black.svg' %}" alt="">
+                        <img data-aos="fade-up" src="{% static 'img/Vimeo_black.svg' %}" alt="">
+                        <img data-aos="fade-up" src="{% static 'img/Twitter_black.svg' %}" alt="">
+                        <img data-aos="fade-up" src="{% static 'img/Instagram_black.svg' %}" alt="">
+                    </div>
+                </div>
+                <div class="teamDesc">
+                    <h1 class="teamName">Richard Taylor</h1>
+                    <p class="position">Developer</p>
+                </div>
+            </div>
+    
+            <div class="eachCarousel eachTeam">
+                <div class="teamPic">
+                    <img src="{% static 'img/team-image-3.jpg' %}" alt="">
+                    <div class="teamSocialLink">
+                        <img src="{% static 'img/Facebook_black.svg' %}" alt="">
+                        <img src="{% static 'img/Vimeo_black.svg' %}" alt="">
+                        <img src="{% static 'img/Twitter_black.svg' %}" alt="">
+                        <img src="{% static 'img/Instagram_black.svg' %}" alt="">
+                    </div>
+                </div>
+                <div class="teamDesc">
+                    <h1 class="teamName">Bertha Earley</h1>
+                    <p class="position">Content writer</p>
+                </div>
+            </div>
+        </div>
+        <div class="carouselIndicator">
+            <div class="indicator activeIndicator" onclick="slideCarousel(0)"></div>
+            <div class="indicator" onclick="slideCarousel(1)"></div>
+            <div class="indicator" onclick="slideCarousel(2)"></div>
+            <div class="indicator" onclick="slideCarousel(3)"></div>
+            <div class="indicator" onclick="slideCarousel(4)"></div>
+            <div class="indicator" onclick="slideCarousel(5)"></div>
+        </div>
+    </section>
+
+{% endblock %}

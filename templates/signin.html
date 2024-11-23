@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Document</title>
+   <link rel="stylesheet" href="{% static 'css/commonStyle.css' %}">
+   <link rel="stylesheet" href="{% static 'css/style.css' %}">
+   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+
+
+
+   <link href="https://cdn.jsdelivr.net/npm/aos@2.3.1/dist/aos.css" rel="stylesheet">
+   <script src="https://cdn.jsdelivr.net/npm/aos@2.3.1/dist/aos.js"></script>
+
+    <!--Scrolling animation link-->
+  <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+
+
+     <!--Font Awesome CDN-->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <!--Owl carousel min.css-->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" integrity="sha512-tS3S5qG0BlhnQROyJXvNjeEM4UpMXHrQfTGmbQ1gKmelCxlSEBUaxhRBj/EFTzpbP4RVSrpEikbmdJobCvhE3g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <!--owl.theme.default.min.css-->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css" integrity="sha512-sMXtMNL1zRzolHYKEujM2AqCLUR9F2C4/05cdbxjjLSRvMQIciEPCQZo++nk7go3BtSuK9kfa/s+a4f4i5pLkw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+
+<script src="//code.jivosite.com/widget/3OQtNZONHK" async></script>
+
+
+</head>
+<body>
+
+<center>
+
+    <style>
+        /* Container for the Google Translate widget */
+        #google_translate_element {
+            display: flex; /* Use flexbox for horizontal layout */
+            justify-content: center; /* Center it horizontally */
+            align-items: center; /* Align items vertically */
+            gap: 10px; /* Add spacing between items */
+            margin: 20px 0; /* Add spacing around the widget */
+            width: 80vw;
+        }
+
+        /* Styling the translate dropdown */
+        #google_translate_element select {
+            width: 100%; /* Make the dropdown responsive */
+            max-width: 300px; /* Set a max width for larger screens */
+            padding: 5px 10px; /* Add padding inside the dropdown */
+            font-size: 16px; /* Improve readability */
+            border: 1px solid #ccc; /* Add a subtle border */
+            border-radius: 5px; /* Round the corners */
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Add a slight shadow */
+        }
+
+        /* Make the widget responsive */
+        @media (max-width: 600px) {
+            #google_translate_element {
+                flex-direction: column; /* Stack items vertically on smaller screens */
+            }
+        }
+    </style>
+
+
+    <div id="google_translate_element"></div>
+
+    <script type="text/javascript">
+        function googleTranslateElementInit() {
+            new google.translate.TranslateElement(
+                {pageLanguage: 'en'},
+                'google_translate_element'
+            );
+        }
+    </script>
+
+    <script type="text/javascript" 
+            src=
+"https://translate.google.com/translate_a/element.js?
+cb=googleTranslateElementInit">
+    </script>
+</center>
+<center>
+
+    <div class="container4">
+        <div class="form-box">
+          <h2>Sign in to your account</h2>
+          <form action="{% url 'signin' %}" method="post">
+
+            {% csrf_token %}
+            <input type="text" placeholder="User Name" required name="username" id="username">
+            <input type="password" placeholder="Password" required name="password" id="password">
+            <button type="submit">Sign in</button>
+            {% if messages %}
+            <ul>
+                {% for message in messages %}
+                <li>
+                    {{message}}
+                </li>
+                {% endfor %}
+            </ul>
+            {% endif %}
+            <div class="links">
+              <p>Not registered? <a href="{% url 'signup' %}">Register</a></p>
+              <a href="reset-password.html">Reset Password</a>
+            </div>
+          </form>
+        </div>
+      </div>
+
+</center>
+
+   
+    
+  <!--jQuery CDN-->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+  <!--Owl carousel min.js-->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js" integrity="sha512-bPs7Ae6pVvhOSiIcyUClR7/q2OAsRiovw4vAkX+zJbw3ShAeeqezq50RIIcIURq7Oa20rW2n2q+fyXBNcU9lrw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+
+    
+    <script>
+        AOS.init({
+            duration: 1200,
+            easing: 'ease-out-back',
+            once: true,
+        });
+    </script>
+
+</body>
+</html>

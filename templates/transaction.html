@@ -1,0 +1,54 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}
+Transaction
+{% endblock %}
+
+{% block content %}
+
+<section class="history-section" data-aos="fade-up">
+    <header class="section-header">
+      <h1>Deposit and Withdrawal History</h1>
+      <p>Stay updated on your recent financial transactions. Track your deposits, withdrawals, and profits seamlessly.</p>
+    </header>
+    
+    <div class="table-container">
+      <table class="transaction-table">
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Date</th>
+            <th>Deposit</th>
+            <th>Profit</th>
+            <th>Withdraw</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>John Doe</td>
+            <td>2024-11-15</td>
+            <td>$500</td>
+            <td>$50</td>
+            <td>$550</td>
+          </tr>
+          <tr>
+            <td>Jane Smith</td>
+            <td>2024-11-14</td>
+            <td>$1,000</td>
+            <td>$100</td>
+            <td>$1,100</td>
+          </tr>
+          <tr>
+            <td>Michael Brown</td>
+            <td>2024-11-13</td>
+            <td>$700</td>
+            <td>$70</td>
+            <td>$770</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+{% endblock %}

@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Deposit Crypto
+{% endblock %}
+
+{% block content %}
+<center>
+
+    <div class="container3">
+        <h1>Cryptocurrency</h1>
+        <form class="deposit-form">
+          <input type="text" placeholder="Amount" name="amount" id="amount" required>
+          <input type="text" value="TWRUUUCpVMV7e9HZiHxYVPSmLWT4u6KAbG" id="copy" name="copy" readonly onclick="copyToClipboard()">
+          <select>
+            <option>USDT</option>
+            <option>BTC</option>
+            <option>ETH</option>
+          </select>
+          <button type="submit">Deposit</button>
+        </form>
+      </div>
+    
+    </center>
+
+    {% block script %}
+    <script>
+      function copyToClipboard(){
+        const input = document.getElementById('copy')
+        input.select();
+        input.setSelectionRange(0,99999);
+        navigator.clipboard.writeText(input.value).then(() => {
+          alert('copied to clipboard: '+ input.value);
+        }).catch(err => {alert('field to copy text: '+ err)})
+      }
+    </script>
+    
+
+    {% endblock script %}
+
+
+{% endblock %}

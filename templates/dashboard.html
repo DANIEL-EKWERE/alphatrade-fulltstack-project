@@ -1,0 +1,156 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}
+Dashboard
+{% endblock %}
+
+{% block content %}
+
+<center>
+
+  <div class="container1" data-aos="fade-up">
+      <header class="dashboard-header">
+        <h2>Dashboard</h2>
+        <p>Welcome back {{profile.first_name}}! Here's your account overview.</p>
+        <div class="referral" id="copy">
+          Referral ID: <strong id="referral-id">{{profile.referral}}</strong>
+          <button class="copy-btn" onclick="copyToClipboard()" >Copy</button>
+        </div>user.
+      </header>
+  
+      <div class="grid">
+        <!-- Deposit Wallet Balance -->
+        <div class="card" data-aos="fade-up">
+          <div class="card-icon">&#128178;</div>
+          <h5>{{details.deposit_wallet_balance}}</h5>
+          <p>Deposit Wallet Balance</p>
+          <p class="date">11/13/2024</p>
+        </div>
+  
+        <!-- Interest Wallet Balance -->
+        <div class="card" data-aos="fade-up">
+          <div class="card-icon">&#128200;</div>
+          <h5>{{details.interest_wallet_balance}}</h5>
+          <p>Interest Wallet Balance</p>
+          <p class="date">11/13/2024</p>
+        </div>
+  
+        <!-- Total Invest Balance -->
+        <div class="card" data-aos="fade-up">
+          <div class="card-icon">&#127873;</div>
+          <h5>${{details.total_invest_balance}}</h5>
+          <p>Total Invest Balance</p>
+          <p class="date">11/13/2024</p>
+        </div>
+  
+        <!-- Total Deposit -->
+        <div class="card" data-aos="fade-up">
+          <div class="card-icon">&#128179;</div>
+          <h5>{{details.total_deposit}}</h5>
+          <p>Details Total Deposit</p>
+          <p class="date">11/13/2024</p>
+        </div>
+  
+        <!-- Total Withdraw -->
+        <div class="card" data-aos="fade-up">
+          <div class="card-icon">&#127970;</div>
+          <h5>{{details.total_withdraw}}</h5>
+          <p>Total Withdraw</p>
+          <p class="date">11/13/2024</p>
+        </div>
+  
+        <!-- Referral Balance -->
+        <div class="card" data-aos="fade-up">
+          <div class="card-icon">&#128101;</div>
+          <h5>{{details.referral_balance}}</h5>
+          <p>Referral Balance</p>
+          <p class="date">11/13/2024</p>
+        </div>
+      </div>
+    </div>
+  
+  
+  
+    <div class="deposit-history">
+      <h3>Stats</h3>
+      <div class="table-card">
+        <h4>Deposit History</h4>
+        <div class="table-container">
+          <table>
+            <thead>
+              <tr>
+                <th>Date</th>
+                <th>Amount</th>
+                <th>Status</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>2024/11/13</td>
+                <td>$1,000</td>
+                <td><span class="badge pending">Pending</span></td>
+              </tr>
+              <tr>
+                <td>2024/11/13</td>
+                <td>$100</td>
+                <td><span class="badge pending">Pending</span></td>
+              </tr>
+              <tr>
+                <td>2024/11/13</td>
+                <td>$200</td>
+                <td><span class="badge pending">Pending</span></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  
+  
+    <div class="deposit-history"></div>
+      <!-- <h3>Stats</h3> -->
+      <div class="table-card">
+        <h4>Withdrawal History</h4>
+        <div class="table-container">
+          <table>
+            <thead>
+              <tr>
+                <th>Date</th>
+                <th>Amount</th>
+                <th>Status</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>2024/11/13</td>
+                <td>$1,000</td>
+                <td><span class="badge pending">Pending</span></td>
+              </tr>
+              <tr>
+                <td>2024/11/13</td>
+                <td>$100</td>
+                <td><span class="badge pending">Pending</span></td>
+              </tr>
+              <tr>
+                <td>2024/11/13</td>
+                <td>$200</td>
+                <td><span class="badge pending">Pending</span></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  
+    
+  
+  
+  
+  
+    <script src="{% static 'js/script.js' %}"></script>
+  
+  </center>
+
+
+  
+{% endblock %}

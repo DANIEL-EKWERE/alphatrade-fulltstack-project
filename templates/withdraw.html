@@ -1,0 +1,54 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}
+Withdraw
+{% endblock %}
+
+
+{% block content %}
+
+<div class="container2">
+    <h1 data-aos="fade-down">withdrawal</h1>
+    <div class="deposit-options">
+      <!-- Bank Transfer Card -->
+      <div class="option-card" data-aos="fade-left">
+        <img src="{% static 'img/download.png' %}" alt="Bank Transfer Icon">
+        <h2>Transfer from Site</h2>
+        <p>Limit: 1 - 100,000 USD</p>
+        <a href="{% url 'withdraw-crypto' %}"><button class="deposit-button">withdraw</button></a>
+      </div>
+      <!-- Cryptocurrency Card -->
+      <div class="option-card" data-aos="fade-right">
+        <img src="{% static 'img/images.png' %}" alt="Cryptocurrency Icon">
+        <h2>BITCOIN</h2>
+        <p>Limit: 1 - 100,000 USD</p>
+        <a href="{% url 'withdraw-crypto' %}"><button class="deposit-button">withdraw</button></a>
+      </div>
+    </div>
+  </div>
+
+<div style="padding: 20px;">
+
+</div>
+  <div class="container2"></div>
+    <!-- <h1 data-aos="fade-down">Deposit</h1> -->
+    <div class="deposit-options">
+      <!-- Bank Transfer Card -->
+      <div class="option-card" data-aos="fade-left">
+        <img src="{% static 'img/download (1).png' %}" alt="Bank Transfer Icon">
+        <h2>USDT</h2>
+        <p>Limit: 1 - 100,000 USD</p>
+        <a href="{% url 'withdraw-crypto' %}"><button class="deposit-button">withdraw</button></a>
+      </div>
+      <!-- Cryptocurrency Card -->
+      <div class="option-card" data-aos="fade-right">
+        <img src="{% static 'img/download (2).png' %}" alt="Cryptocurrency Icon">
+        <h2>ETHEREUM</h2>
+        <p>Limit: 1 - 100,000 USD</p>
+        <a href="{% url 'withdraw-crypto' %}"><button class="deposit-button">withdraw</button></a>
+        
+      </div>
+    </div>
+  </div>
+
+{% endblock %}

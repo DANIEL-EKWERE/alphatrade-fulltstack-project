@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>
+
+{% block title %}
+
+{% endblock %}
+| Alpha Trade
+   </title>
+
+   <link rel="stylesheet" href="{% static 'css/commonStyle.css' %}">
+   <link rel="stylesheet" href="{% static 'css/style.css' %}">
+   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+
+
+
+   <link href="https://cdn.jsdelivr.net/npm/aos@2.3.1/dist/aos.css" rel="stylesheet">
+   <script src="https://cdn.jsdelivr.net/npm/aos@2.3.1/dist/aos.js"></script>
+
+    <!--Scrolling animation link-->
+  <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+
+
+     <!--Font Awesome CDN-->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <!--Owl carousel min.css-->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" integrity="sha512-tS3S5qG0BlhnQROyJXvNjeEM4UpMXHrQfTGmbQ1gKmelCxlSEBUaxhRBj/EFTzpbP4RVSrpEikbmdJobCvhE3g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <!--owl.theme.default.min.css-->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css" integrity="sha512-sMXtMNL1zRzolHYKEujM2AqCLUR9F2C4/05cdbxjjLSRvMQIciEPCQZo++nk7go3BtSuK9kfa/s+a4f4i5pLkw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <script src="//code.jivosite.com/widget/3OQtNZONHK" async></script>
+
+</head>
+<body>
+
+    <!-- Header -->
+    <header>
+        <div id="logo">
+            <a href="{% url 'home' %}">
+            <img src="{% static 'img/logo-white.png' %}" alt="">
+            </a>
+        </div>
+        
+        
+    <!-- <script type="text/javascript">
+        function googleTranslateElementInit() {
+          new google.translate.TranslateElement({pageLanguage: 'en'}, 'google_translate_element');
+        }
+        </script>
+    
+        <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+      -->
+
+
+        <ul class="nav" id="nav">
+            <ul class="navLogo">
+                <a href="{% url 'home' %}">
+                     <img src="{% static 'img/logo-white.png' %}" alt="">
+               </a>
+            </ul>
+{% if user.is_authenticated %}
+<li class="nav-link"><a href="{% url 'dashboard' %}">Dashboard</a></li>
+<li class="nav-link"><a href="{% url 'investment' %}">Investment</a></li>
+<li class="nav-link"><a href="{% url 'plans' %}">Plan</a></li>
+<li class="nav-link"><a href="{% url 'transaction' %}">Transactions</a></li>
+<li class="nav-link"><a href="{% url 'deposit' %}">Deposit</a></li>
+<li class="nav-link"><a href="{% url 'withdraw' %}">Withdraw</a></li>
+<li class="nav-link"><a href="{% url 'profile' %}">profile</a></li>
+<li class="nav-link"><a href="{% url 'sign-out' %}">Sign out</a></li>
+{% else %}
+            <li class="nav-link"><a href="{% url 'home' %}">Home</a></li>
+            <li class="nav-link"><a href="{% url 'about' %}">About Us</a></li>
+            <li class="nav-link"><a href="{% url 'contact' %}">Contact</a></li>
+            <li class="nav-link"><a href="{% url 'signin' %}">Sign In</a></li>
+            <li class="nav-link"><a href="{% url 'signup' %}">Sign Up</a></li>
+            {% endif %}
+            <li class="sociallinkContainer">
+                <img class="sociallink" src="{% static 'img/fabook-icon-white.svg' %}" alt="">
+                <img class="sociallink" src="{% static 'img/twitter-icon-white.svg' %}" alt="">
+                <img class="sociallink" src="{% static 'img/inkedin-icon-white.svg' %}" alt="">
+                <img class="sociallink" src="{% static 'img/whatsapp-icon-white.svg' %}" alt="">
+            </li>
+        </ul>
+        <div id="barContainer">
+            <i id="bar" class="fa-solid fa-bars"></i>
+        </div>
+    </header>
+
+<center>
+
+    <style>
+        /* Container for the Google Translate widget */
+        #google_translate_element {
+            display: flex; /* Use flexbox for horizontal layout */
+            justify-content: center; /* Center it horizontally */
+            align-items: center; /* Align items vertically */
+            gap: 10px; /* Add spacing between items */
+            margin: 20px 0; /* Add spacing around the widget */
+            width: 80vw;
+        }
+
+        /* Styling the translate dropdown */
+        #google_translate_element select {
+            width: 100%; /* Make the dropdown responsive */
+            max-width: 300px; /* Set a max width for larger screens */
+            padding: 5px 10px; /* Add padding inside the dropdown */
+            font-size: 16px; /* Improve readability */
+            border: 1px solid #ccc; /* Add a subtle border */
+            border-radius: 5px; /* Round the corners */
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Add a slight shadow */
+        }
+
+        /* Make the widget responsive */
+        @media (max-width: 600px) {
+            #google_translate_element {
+                flex-direction: column; /* Stack items vertically on smaller screens */
+            }
+        }
+    </style>
+
+
+    <div id="google_translate_element"></div>
+
+    <script type="text/javascript">
+        function googleTranslateElementInit() {
+            new google.translate.TranslateElement(
+                {pageLanguage: 'en'},
+                'google_translate_element'
+            );
+        }
+    </script>
+
+    <script type="text/javascript" 
+            src=
+"https://translate.google.com/translate_a/element.js?
+cb=googleTranslateElementInit">
+    </script>
+</center>
+
+
+        {% block content %}
+
+
+        {% endblock %}
+
+
+    <footer>
+        <div class="joinSection">
+            <div class="joinDesc">
+                <h1 class="sectionHeader" data-aos="fade-down">Join with us</h1>
+                <p class="sectionPara" data-aos="fade-down">
+                    Once you have created your account, you can purchase coins from website
+                </p>
+            </div>
+            <button class="btn primaryBtn" data-aos="fade-down">JOIN NOW</button>
+        </div>
+
+        <div class="footerlinksContainer">
+            <div class="footerAboutus">
+                <img src="./img/logo-white.png" alt="">
+                <p class="darkPara">With no commissions and a simple user interface, 
+                 Prouple is the most reliable way to trade for 
+                 Cryptocurrency.
+                </p>
+                <div class="footersociallinkContainer">
+                    <img class="sociallink" src="{% static 'img/fabook-icon-white.svg' %}" alt="">
+                    <img class="sociallink" src="{% static 'img/twitter-icon-white.svg' %}" alt="">
+                    <img class="sociallink" src="{% static 'img/inkedin-icon-white.svg' %}" alt="">
+                    <img class="sociallink" src="{% static 'img/whatsapp-icon-white.svg' %}" alt="">
+                </div>
+            </div>
+
+            <div class="footerlink">
+                <h1 class="linkTitle">Explore</h1>
+                <a href="#" class="eachLink">About us</a>
+                <a href="#" class="eachLink">FAQ</a>
+                <a href="#" class="eachLink">Blog</a>
+                <a href="#" class="eachLink">Contact</a>
+            </div>
+
+            <div class="footerlink">
+                <h1 class="linkTitle">Service</h1>
+                <a href="#" class="eachLink">Mining</a>
+                <a href="#" class="eachLink">Control Data</a>
+                <a href="#" class="eachLink">Design</a>
+                <a href="#" class="eachLink">Security</a>
+            </div>
+
+            <div class="footerlink">
+                <h1 class="linkTitle">Resource</h1>
+                <a href="#" class="eachLink">Style Guide</a>
+                <a href="#" class="eachLink">Change Log</a>
+                <a href="#" class="eachLink">License</a>
+            </div>
+        </div>
+
+        <div class="footerCopyright">
+             <p>&copy; 2023 design and developed by <a href="#" class="developedBy">Programming Insider</a>.</p>
+        </div>
+    </footer>
+    
+  <!--jQuery CDN-->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+  <!--Owl carousel min.js-->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js" integrity="sha512-bPs7Ae6pVvhOSiIcyUClR7/q2OAsRiovw4vAkX+zJbw3ShAeeqezq50RIIcIURq7Oa20rW2n2q+fyXBNcU9lrw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+
+    <script src="{% static 'js/script.js' %}"></script>
+    {% block script %}
+    <script>
+        AOS.init({
+            duration: 1200,
+            easing: 'ease-out-back',
+            once: true,
+        });
+    </script>
+    {% endblock %}
+</body>
+</html>

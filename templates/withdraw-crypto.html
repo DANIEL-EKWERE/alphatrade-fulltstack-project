@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Withdraw Crypto
+{% endblock %}
+
+{% block content %}
+
+<center>
+
+    <div class="container3">
+        <h1>Cryptocurrency</h1>
+        <form class="deposit-form">
+          <input type="text" placeholder="Amount" name="amount" id="amount" required>
+          <input type="text" placeholder="Wallet Address" required name="copy" id="copy" >
+          <select>
+            <option>USDT</option>
+            <option>BTC</option>
+            <option>ETH</option>
+          </select>
+          <button type="submit">Withdraw</button>
+        </form>
+      </div>
+    
+    </center>
+    
+{% endblock %}

@@ -1,0 +1,847 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block title %}
+    Home Page
+{% endblock %}
+
+{% block content %}
+   <!-- Hero page -->
+   <section class="hero gridSection">
+        
+    <div class="sectionDesc">
+        <h1 data-aos="fade-up" class="headline">
+            Invest for Future in Stable Platform </br><span class="cryptoText">and Make Fast Money                </span>.
+        </h1>
+        <p data-aos="fade-up" class="sub-headline">
+            Invest in an Industry Leader, Professional, and Reliable Company. We provide you with the most necessary features that will make your experience better. Not only we guarantee the fastest and the most exciting returns on your investments, but we also guarantee the security of your investment.
+        </p>
+        <div class="btnContainer">
+            <button data-aos="fade-left" class="btn btn1">Contact Now</button>
+            <button data-aos="fade-right" class="btn btn2">play video <i class="fa-solid fa-play"></i></button>
+        </div>
+    </div>
+    <div class="sectionPic bouncepic" id="sectionPic">
+        <img src="{% static 'img/hero-image.png' %}" alt="">
+    </div>
+</section>
+
+<!-- Carousel -->
+<section>
+    <div data-aos="fade-up" class="carouselContainer">
+        <div class="eachCarousel eachCarouselBorder">
+            <img src="{% static 'img/bitcoin-icon.png' %}" alt="">
+            <article class="carouselDesc">
+                <h1 class="carouselTitle">Bitcoin</h1>
+                <p class="carouselPara">Bitcoin is an innovative payment network</p>
+                <div class="carouselPrice">
+                    <h3>$34,000</h3>
+                    <span class="rect"></span>
+                    <h3 class="carouselDiscount">15%</h3>
+                </div>
+                <button class="btn carouselBtn">Buy & Trade</button>
+            </article>
+        </div>
+
+        <div class="eachCarousel">
+            <img src="{% static 'img/ethereum-icon.png' %}" alt="">
+            <article class="carouselDesc">
+                <h1 class="carouselTitle">Ethereum</h1>
+                <p class="carouselPara">Ethereum is open-source blockchain currency</p>
+                <div class="carouselPrice">
+                    <h3>$25,600</h3>
+                    <span class="rect"></span>
+                    <h3 class="carouselDiscount">9%</h3>
+                </div>
+                <button class="btn carouselBtn">Buy & Trade</button>
+            </article>
+        </div>
+
+        <div class="eachCarousel">
+            <img src="{% static 'img/tether-icon.png' %}" alt="">
+            <article class="carouselDesc">
+                <h1 class="carouselTitle">Tether</h1>
+                <p class="carouselPara">Tether is a stable coin cryptocurrency</p>
+                <div class="carouselPrice">
+                    <h3>$7,000</h3>
+                    <span class="rect"></span>
+                    <h3 class="carouselDiscount">4%</h3>
+                </div>
+                <button class="btn carouselBtn">Buy & Trade</button>
+            </article>
+        </div>
+
+        <div class="eachCarousel">
+            <img src="{% static 'img/bitcoin-icon.png' %}" alt="">
+            <article class="carouselDesc">
+                <h1 class="carouselTitle">Bitcoin</h1>
+                <p class="carouselPara">Bitcoin is an innovative payment network</p>
+                <div class="carouselPrice">
+                    <h3>$34,000</h3>
+                    <span class="rect"></span>
+                    <h3 class="carouselDiscount">15%</h3>
+                </div>
+                <button class="btn carouselBtn">Buy & Trade</button>
+            </article>
+        </div>
+
+        <div class="eachCarousel">
+            <img src="{% static 'img/ethereum-icon.png' %}" alt="">
+            <article class="carouselDesc">
+                <h1 class="carouselTitle">Ethereum</h1>
+                <p class="carouselPara">Ethereum is open-source blockchain currency</p>
+                <div class="carouselPrice">
+                    <h3>$25,600</h3>
+                    <span class="rect"></span>
+                    <h3 class="carouselDiscount">9%</h3>
+                </div>
+                <button class="btn carouselBtn">Buy & Trade</button>
+            </article>
+        </div>
+
+        <div class="eachCarousel">
+            <img src="{% static 'img/tether-icon.png' %}" alt="">
+            <article class="carouselDesc">
+                <h1 class="carouselTitle">Tether</h1>
+                <p class="carouselPara">Tether is a stable coin cryptocurrency</p>
+                <div class="carouselPrice">
+                    <h3>$7,000</h3>
+                    <span class="rect"></span>
+                    <h3 class="carouselDiscount">4%</h3>
+                </div>
+                <button class="btn carouselBtn">Buy & Trade</button>
+            </article>
+        </div>
+    </div>
+    <div class="carouselIndicator">
+        <div class="indicator activeIndicator" onclick="slideCarousel(0)"></div>
+        <div class="indicator" onclick="slideCarousel(1)"></div>
+        <div class="indicator" onclick="slideCarousel(2)"></div>
+        <div class="indicator" onclick="slideCarousel(3)"></div>
+        <div class="indicator" onclick="slideCarousel(4)"></div>
+        <div class="indicator" onclick="slideCarousel(5)"></div>
+    </div>
+</section>
+
+<!-- Processes -->
+<section class="gridSection">
+    <div class="sectionDesc processessDesc">
+        <h1 data-aos="fade-right" class="sectionHeader">About Us</h1>
+        <p class="sectionPara" data-aos="fade-up">We do not charge any fees and we do not require 
+          any registration. You keep your privacy and your 
+          coins.
+        </p>
+
+        <p data-aos="fade-up" class="sectionPara">
+            We are an international financial company engaged in investment activities, which are related to trading on financial markets and cryptocurrency exchanges performed by qualified professional traders.
+        </p>
+
+        <p data-aos="fade-up" class="sectionPara">
+            Our goal is to provide our investors with a reliable source of high income, while minimizing any possible risks and offering a high-quality service, allowing us to automate and simplify the relations between the investors and the trustees. We work towards increasing your profit margin by profitable investment. We look forward to you being part of our community.
+
+
+        </p>
+        <div class="eachProcesses">
+            <img data-aos="fade-right" src="{% static 'img/handshake-icon-white-line.svg' %}" alt="handshake">
+            <div class="eachprocessesPara">
+                <h1 data-aos="fade-right" class="processTitle">Trading</h1>
+                <p data-aos="fade-up">
+                    The act of speculating on cryptocurrency price movements 
+                    via a CFD trading account, or buying and selling.
+                </p>
+            </div>
+        </div>
+        <div class="eachProcesses">
+            <img data-aos="fade-right" src="{% static 'img/cart-icon-white-line.svg' %}" alt="handshake">
+            <div class="eachprocessesPara">
+                <h1 class="processTitle" data-aos="fade-up" >Buying</h1>
+                <p data-aos="fade-up">
+                    Best cryptocurrency exchanges currently purchase Bitcoin, 
+                    Ethereum, and Litecoin other coins and tokens on the platform.
+                </p>
+            </div>
+        </div>
+    </div>
+    <div class="sectionPic bouncepic processesPic" id="sectionPic">
+        <img data-aos="fade-right" src="{% static 'img/chain-process-img.png' %}" alt="">
+    </div>
+</section>
+
+<!-- Markets -->
+<section class="gridSection">
+    <div class="sectionDesc marketDesc">
+        <h1 class="sectionHeader" data-aos="fade-right">Markets at finger</h1>
+        <p class="sectionPara" data-aos="fade-up">The Blockchain is a decentralized, 
+            digital ledger of transactions that are recorded 
+            confirmed
+        </p>
+        <div class="eachMarket">
+            <img data-aos="fade-right" src="{% static 'img/buy-icon-color.svg' %}" alt="handshake">
+            <div>
+                <h1 class="marketTitle" data-aos="fade-right">Buying</h1>
+                <p data-aos="fade-up" class="darkPara">
+                    Best cryptocurrency exchanges currently purchase 
+                    Bitcoin, Ethereum, and Litecoin other coins and tokens 
+                    on the platform.
+                </p>
+            </div>
+        </div>
+        <div class="eachMarket">
+            <img data-aos="fade-right" src="{% static 'img/trading-icon-color.svg' %}" alt="handshake">
+            <div>
+                <h1 data-aos="fade-right" class="marketTitle">Trading</h1>
+                <p data-aos="fade-up" class="darkPara">
+                    The act of speculating on cryptocurrency price movements 
+                    via a CFD trading account, or buying and selling.
+                </p>
+            </div>
+        </div>
+        <div class="eachMarket">
+            <img data-aos="fade-right" src="{% static 'img/support-icon-color.svg' %}" alt="handshake">
+            <div>
+                <h1 class="marketTitle" data-aos="fade-right">Supporting</h1>
+                <p data-aos="fade-up" class="darkPara">
+                    Don’t worry if you’re new to crypto and digital 
+                    currencies – Skrill makes setting up a cryptocurrency 
+                    wallet easy.
+                </p>
+            </div>
+        </div>
+        <div class="eachMarket">
+            <img data-aos="fade-right" src="{% static 'img/online-icon-color.svg' %}" alt="handshake">
+            <div>
+                <h1 class="marketTitle" data-aos="fade-right">Online</h1>
+                <p class="darkPara" data-aos="fade-up">
+                    Cryptocurrency, especially Bitcoin, 
+                    has proven to be a popular trading 
+                    vehicle, even if legendary investors 
+                    as good.
+                </p>
+            </div>
+        </div>
+    </div>
+    <div class="sectionPic marketspicSection" id="sectionPic">
+       <h1 class="marketspicHeader" data-aos="fade-up">ACHIEVEMENTS</h1>
+        <div class="marketsPicContainer" data-aos="fade-left">
+            <div class="marketPic marketPic1">
+                <img data-aos="fade-down" src="{% static 'img/persent-icon-white.svg' %}" alt="">
+                <article class="marketTitle" data-aos="fade-up">High percentage</article>
+                <p > <b> higher profits </b></p>
+            </div>
+
+            <div class="marketPic marketPic2">
+                <img data-aos="fade-down" src="{% static 'img/bitcoin-icon-white.svg' %}" alt="">
+                <article class="marketTitle">$500M+</article>
+                <p> <b> Total deposit </b></p>
+            </div>
+
+            <div class="marketPic marketPic3">
+                <img data-aos="fade-down" src="{% static 'img/ethereum-white-icon.svg' %}" alt="">
+                <article class="marketTitle">34394</article>
+                <p><b>Transactions</b></p>
+            </div>
+
+            <div class="marketPic marketPic4">
+                <img src="{% static 'img/handshake-icon-white.svg' %}" alt="">
+                <article class="marketTitle">220609</article>
+                <p> <b> Active Members </b> </p>
+            </div>
+        </div>
+        </div>
+</section>
+
+<!-- Dashboard -->
+<section class="gridSection">
+    <div class="sectionDesc dashboardDesc">
+        <h1 class="sectionHeader" data-aos="fade-up">Trade crypto in seconds</h1>
+        <p class="sectionPara" data-aos="fade-up">
+            But with prouple, you can mine bitcoin from your own phone! 
+            You no longer have to worry about costly transactions.
+        </p>
+        <button data-aos="fade-up" class="btn">Explore Now</button>
+    </div>
+
+    <div class="sectionPic dashboardPic">
+        <img  data-aos="fade-up" src="{% static 'img/dashboard-dark.jpg' %}" alt="">
+    </div>
+
+</section>
+
+<div class="fundSection">
+    <div class="sectionDesc">
+        <h1 class="sectionHeader" data-aos="fade-up">Control your funds</h1>
+        <p class="sectionPara" data-aos="fade-up">
+            Our mining pool offers some of the most competitive contracts in the market.
+        </p>
+        <div class="fundsContainer">
+            <div class="fund">
+                <img data-aos="fade-up" src="{% static 'img/cryptocurrency-white-icon.svg' %}" alt="cryptocurrency">
+                <h1 class="fundType" data-aos="fade-up">Support All Currency</h1>
+                <p class="darkPara" data-aos="fade-up">
+                    Accept and process payments from all types of currencies.
+                </p>
+            </div>
+
+            <div class="fund">
+                <img data-aos="fade-up" src="{% static 'img/blockchain-white-icon.svg' %}" alt="cryptocurrency">
+                <h1 class="fundType" data-aos="fade-up">Block Chain System</h1>
+                <p class="darkPara" data-aos="fade-up">
+                    How it Works, Benefits and its Deployment in Financial
+                </p>
+            </div>
+            
+
+            <div class="fund">
+                <img data-aos="fade-up" src="{% static 'img/cryptocurrency-sell-white-icon.svg' %}" alt="cryptocurrency">
+                <h1 class="fundType" data-aos="fade-up">Fund Selling</h1>
+                <p class="darkPara" data-aos="fade-up">
+                    How to Profit in the Crypto Markets through Investing
+                </p>
+            </div>
+
+            <div class="fund">
+                <img data-aos="fade-up" src="{% static 'img/cryptocurrency-card-white-icon.svg' %}" alt="cryptocurrency">
+                <h1 class="fundType" data-aos="fade-up">Crypto Card</h1>
+                <p class="darkPara" data-aos="fade-up">
+                    Crypto Cards and Why Cryptocurrency are the Future
+                </p>
+            </div>
+            
+        </div>
+    </div>
+</div>
+
+
+
+
+
+<hr>
+
+
+
+<div class="fundSection">
+    <div class="sectionDesc">
+        <h1 class="sectionHeader">Why Choose Us</h1>
+        <p class="sectionPara">
+            Help agencies to define thier new objectives and then create professional software
+        </p>
+        <div class="fundsContainer">
+            <div class="fund">
+                <img data-aos="fade-up" src="{% static 'img/copy-svgrepo-com.svg' %}" alt="cryptocurrency" >
+
+                <!-- <i class="fas fa-copy"></i> -->
+                <!-- img/copy-svgrepo-com.svg -->
+                <h1 class="fundType" data-aos="fade-up">Legal Company</h1>
+                <p class="darkPara" data-aos="fade-up">
+                    Our company conducts absolutely legal activities in the legal field. We are certified to operate investment business, we are legal and safe.
+                </p>
+            </div>
+
+            <div class="fund">
+                <img data-aos="fade-up" src="{% static 'img/lock-svgrepo-com.svg' %}" alt="cryptocurrency">
+                <h1 class="fundType" data-aos="fade-up">High reliability</h1>
+                <p class="darkPara" data-aos="fade-up">
+                    We are trusted by a huge number of people. We are working hard constantly to improve the level of our security system and minimize possible risks.
+                </p>
+            </div>
+            
+
+            <div class="fund">
+                <img src="{% static 'img/person-svgrepo-com.svg' %}" data-aos="fade-up" alt="cryptocurrency">
+                <h1 class="fundType" data-aos="fade-up">Anonymity</h1>
+                <p class="darkPara" data-aos="fade-up">
+                    Anonymity and using cryptocurrency as a payment instrument. In the era of electronic money – this is one of the most convenient ways of cooperation.
+                </p>
+            </div>
+
+            <div class="fund">
+                <img src="{% static 'img/fast-delivery-svgrepo-com.svg' %}" alt="cryptocurrency">
+                <h1 class="fundType" data-aos="fade-up">Quick Withdrawal</h1>
+                <p class="darkPara" data-aos="fade-up">
+                    Our all retreats are treated spontaneously once requested. There are high maximum limits. The minimum withdrawal amount is only $10 .
+                </p>
+            </div>
+            
+        </div>
+    </div>
+</div>
+
+
+
+<div class="fundSection">
+    <div class="sectionDesc">
+        <!-- <h1 class="sectionHeader">Control your funds</h1>
+        <p class="sectionPara">
+            Our mining pool offers some of the most competitive contracts in the market.
+        </p> -->
+        <div class="fundsContainer">   
+            <div class="fund">
+                <img src="{% static 'img/support-svgrepo-com.svg' %}"  data-aos="fade-up" alt="cryptocurrency">
+                <h1 class="fundType" data-aos="fade-up">24/7 Support</h1>
+                <p class="darkPara" data-aos="fade-up">
+                    We provide 24/7 customer support through e-mail and telegram. Our support representatives are periodically available to elucidate any difficulty.
+                </p>
+            </div>
+            
+
+            <div class="fund">
+                <img src="{% static 'img/database-svgrepo-com.svg' %}" data-aos="fade-up" alt="cryptocurrency">
+                <h1 class="fundType" data-aos="fade-up">Dedicated Server</h1>
+                <p class="darkPara" data-aos="fade-up">
+                    We are using a dedicated server for the website which allows us 
+                    exclusive use of the resources of the entire server.
+                </p>
+            </div>
+
+            <div class="fund">
+                <img src="{% static 'img/cloud-lock-protect-3-svgrepo-com.svg' %}" alt="cryptocurrency">
+                <h1 class="fundType" data-aos="fade-up">SSL Secured</h1>
+                <p class="darkPara" data-aos="fade-up">
+                    Comodo Essential-SSL Security encryption confirms that the presented 
+                    content is genuine and legitimate.
+                </p>
+            </div>
+            
+            <div class="fund">
+                <img  data-aos="fade-up" src="{% static 'img/lock-protection-security-shield-protect-safe-svgrepo-com.svg' %}" alt="cryptocurrency">
+                <h1 class="fundType" data-aos="fade-up">DDOS Protection</h1>
+                <p class="darkPara" data-aos="fade-up">
+                    We are using one of the most experienced, professional, and trusted DDoS Protection and mitigation provider.
+                </p>
+            </div>
+            
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+<header class="pricing-header">
+    <h1 data-aos="fade-up">Investment Plans</h1>
+    <p data-aos="fade-up">To make a solid investment, you have to know where you are investing. Find a plan which is best for you.</p>
+  </header>
+  
+
+
+
+<section class="pricing" data-aos="fade-up">
+    <!-- <article>
+        Investment Plans
+    </article>
+    <p> To make a solid investment, you have to know where you are investing. Find a plan which is best for you. </p> -->
+    <div class="pricing-card starter">
+      <h3>Starter</h3>
+      <h4>$29<span>/MONTH</span></h4>
+      <ul>
+        <li>✔️ 10,000 Visitors*</li>
+        <li>✔️ Create Unlimited Widgets</li>
+        <li>✔️ All Widget Types</li>
+        <li>✔️ 3rd Party Integrations</li>
+        <li>✔️ Advanced Targeting</li>
+        <li>✔️ Widget A/B Testing</li>
+      </ul>
+      <button>GET STARTED</button>
+    </div>
+    <div class="pricing-card pro most-popular">
+      <div class="tag">MOST POPULAR</div>
+      <h3>Pro</h3>
+      <h4>$46<span>/MONTH</span></h4>
+      <ul>
+        <li>✔️ 10,000 Visitors*</li>
+        <li>✔️ All in Starter</li>
+        <li>✔️ Website Personalization</li>
+        <li>✔️ A/B Testing and Experimentation</li>
+        <li>✔️ Manage Multiple Websites</li>
+        <li>✔️ Priority Support</li>
+      </ul>
+      <button>GET STARTED</button>
+    </div>
+    <div class="pricing-card enterprise">
+      <h3>Enterprise</h3>
+      <h4>Custom</h4>
+      <ul>
+        <li>✔️ 10,000 Visitors*</li>
+        <li>✔️ All in Starter and Pro</li>
+        <li>✔️ Custom Contract</li>
+        <li>✔️ Clearbit and Albacross</li>
+        <li>✔️ Custom Integrations</li>
+        <li>✔️ Dedicated Manager</li>
+      </ul>
+      <button>CONTACT US</button>
+    </div>
+  </section>
+
+
+
+
+
+  <section class="history-section" data-aos="fade-up">
+    <header class="section-header">
+      <h1>Deposit and Withdrawal History</h1>
+      <p>Stay updated on your recent financial transactions. Track your deposits, withdrawals, and profits seamlessly.</p>
+    </header>
+    
+    <div class="table-container">
+      <table class="transaction-table">
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Capital</th>
+            <th>Daily Profit</th>
+            <th>weekly Profit</th>
+            <th>monthly Profit</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>John Doe</td>
+            <td>$50</td>
+            <td>$25</td>
+            <td>$175</td>
+            <td>$750</td>
+          </tr>
+          <tr>
+            <td>Jane Smith</td>
+            <td>$100</td>
+            <td>$50</td>
+            <td>$350</td>
+            <td>$1,500</td>
+          </tr>
+          <tr>
+            <td>Michael Brown</td>
+            <td>$200</td>
+            <td>$100</td>
+            <td>$700</td>
+            <td>$3,000</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+  
+<section class="header_section" data-aos="fade-up">
+    <h1>What Users Say About Us</h1>
+    <p>We are doing really good at this market and here are the words we loved to get from a few of our users.</p>
+  </section>
+
+
+  <div class="wrapper">
+    <div class="slider">
+      <div class="container owl-carousel owl-theme">
+
+        <div class="card item">
+
+          <div class="img_container">
+            <img src="{% static 'img/member01.png' %}" alt="">
+          </div>
+
+          <div class="info">
+            <span class="name">Kristina Lászlóné Tamás</span>
+            <div class="post">pensioner</div>
+            <p class="about">I never thought I'd be able to save for retirement, but Alphatrade automated the entire process. Watching my portfolio grow without actively managing it has been amazing!</p>
+          </div>
+
+
+          <div class="footer">
+            <div class="social_icon">
+              <button><i class="fa-brands fa-twitter"></i></button>
+              <button><i class="fa-brands fa-instagram"></i></button>
+              <button><i class="fa-brands fa-whatsapp"></i></button>
+            </div>
+
+            <div class="btn">
+              <button>Read More...</button>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="card item">
+
+          <div class="img_container">
+            <img src="{% static 'img/member02.png' %}" alt="">
+          </div>
+
+          <div class="info">
+            <span class="name">Jakob Zoli</span>
+            <div class="post">philanthropist</div>
+            <p class="about">Alphatrade rounded up my spare change and invested it over time. What seemed like pocket change turned into thousands of dollars after a couple of trading sessions.
+                It’s been a great experience, keep it up!!!</p>
+          </div>
+
+
+          <div class="footer">
+            <div class="social_icon">
+              <button><i class="fa-brands fa-twitter"></i></button>
+              <button><i class="fa-brands fa-instagram"></i></button>
+              <button><i class="fa-brands fa-whatsapp"></i></button>
+            </div>
+
+            <div class="btn">
+              <button>Read More...</button>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="card item">
+
+          <div class="img_container">
+            <img src="{% static 'img/member03.png' %}" alt="">
+          </div>
+
+          <div class="info">
+            <span class="name">Regán lili</span>
+            <div class="post">Artist</div>
+            <p class="about">Alphatrading feature allowed me to learn from experienced investors. By following successful strategies, I've started earning consistent returns without feeling overwhelmed.</p>
+          </div>
+
+
+          <div class="footer">
+            <div class="social_icon">
+              <button><i class="fa-brands fa-twitter"></i></button>
+              <button><i class="fa-brands fa-instagram"></i></button>
+              <button><i class="fa-brands fa-whatsapp"></i></button>
+            </div>
+
+            <div class="btn">
+              <button>Read More...</button>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="card item">
+
+          <div class="img_container">
+            <img src="{% static 'img/member04.png' %}" alt="">
+          </div>
+
+          <div class="info">
+            <span class="name">Szalkai szilardne andrea</span>
+            <div class="post">Chef</div>
+            <p class="about">I was skeptical about cryptocurrency and trading but Alpha trades educational tools helped me understand the market now diversified my portfolio with Bitcoin and USDT with the mining software that provides good signal and results.
+                I’m so happy to be a part of this great platform.</p>
+          </div>
+
+
+          <div class="footer">
+            <div class="social_icon">
+              <button><i class="fa-brands fa-twitter"></i></button>
+              <button><i class="fa-brands fa-instagram"></i></button>
+              <button><i class="fa-brands fa-whatsapp"></i></button>
+            </div>
+
+            <div class="btn">
+              <button>Read More...</button>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="card item">
+
+          <div class="img_container">
+            <img src="{% static 'img/member05.png' %}" alt="">
+          </div>
+
+          <div class="info">
+            <span class="name">Koncz zsuzsa</span>
+            <div class="post">Musician</div>
+            <p class="about">Alpha trade allowed me to invest in commercial real estate for the first time.
+                Seeing my money work in such lucrative markets has been rewarding.</p>
+          </div>
+
+
+          <div class="footer">
+            <div class="social_icon">
+              <button><i class="fa-brands fa-twitter"></i></button>
+              <button><i class="fa-brands fa-instagram"></i></button>
+              <button><i class="fa-brands fa-whatsapp"></i></button>
+            </div>
+
+            <div class="btn">
+              <button>Read More...</button>
+            </div>
+          </div>
+
+        </div>
+
+
+
+
+
+        <div class="card item">
+
+            <div class="img_container">
+              <img src="{% static 'img/member06.png' %}" alt="">
+            </div>
+  
+            <div class="info">
+              <span class="name">Robert habeck</span>
+              <div class="post">Politician</div>
+              <p class="about">Alpha trade allowed me to invest in commercial real estate for the first time.
+                Seeing my money work in such lucrative markets has been rewarding.</p>
+            </div>
+  
+  
+            <div class="footer">
+              <div class="social_icon">
+                <button><i class="fa-brands fa-twitter"></i></button>
+                <button><i class="fa-brands fa-instagram"></i></button>
+                <button><i class="fa-brands fa-whatsapp"></i></button>
+              </div>
+  
+              <div class="btn">
+                <button>Read More...</button>
+              </div>
+            </div>
+  
+        </div>
+
+
+
+
+        <div class="card item">
+
+            <div class="img_container">
+              <img src="{% static 'img/member07.png' %}" alt="">
+            </div>
+  
+            <div class="info">
+              <span class="name">Christopher jaszczynski</span>
+              <div class="post">Business consultant</div>
+              <p class="about">No matter how slow you progress, you’re still way ahead of everyone who isn’t trying.</p>
+            </div>
+  
+  
+            <div class="footer">
+              <div class="social_icon">
+                <button><i class="fa-brands fa-twitter"></i></button>
+                <button><i class="fa-brands fa-instagram"></i></button>
+                <button><i class="fa-brands fa-whatsapp"></i></button>
+              </div>
+  
+              <div class="btn">
+                <button>Read More...</button>
+              </div>
+            </div>
+  
+        </div>
+
+
+
+        <div class="card item">
+
+            <div class="img_container">
+              <img src="{% static 'img/member08.png' %}" alt="">
+            </div>
+  
+            <div class="info">
+              <span class="name">Conrad Fuhrmann</span>
+              <div class="post">Electrical engineer</div>
+              <p class="about">Investing in Alpha trades allowed me to support small businesses while earning passive income. The interest rates are much better than a savings account!"
+                It’s amazing to make money while contributing to a better future.</p>
+            </div>
+  
+  
+            <div class="footer">
+              <div class="social_icon">
+                <button><i class="fa-brands fa-twitter"></i></button>
+                <button><i class="fa-brands fa-instagram"></i></button>
+                <button><i class="fa-brands fa-whatsapp"></i></button>
+              </div>
+  
+              <div class="btn">
+                <button>Read More...</button>
+              </div>
+            </div>
+  
+        </div>
+
+
+
+        <div class="card item">
+
+            <div class="img_container">
+              <img src="{% static 'img/member1.jpg' %}" alt="">
+            </div>
+  
+            <div class="info">
+              <span class="name">Justin Laketimber</span>
+              <div class="post">banker</div>
+              <p class="about">I don't have time to trade actively, but Alpha Trades' automated trading tools have made it easy for me to earn passively. I set up their bots to follow strategies that align with my risk appetite, and my Profits has has grown steadily without constant monitoring.</p>
+            </div>
+  
+  
+            <div class="footer">
+              <div class="social_icon">
+                <button><i class="fa-brands fa-twitter"></i></button>
+                <button><i class="fa-brands fa-instagram"></i></button>
+                <button><i class="fa-brands fa-whatsapp"></i></button>
+              </div>
+  
+              <div class="btn">
+                <button>Read More...</button>
+              </div>
+            </div>
+  
+        </div>
+
+
+        <div class="card item">
+
+            <div class="img_container">
+              <img src="{% static 'img/member2.jpg' %}" alt="">
+            </div>
+  
+            <div class="info">
+              <span class="name">Laketimber Zoli</span>
+              <div class="post">banker</div>
+              <p class="about">When I first saw the advertisement, I was afraid of being scammed again. But Alpha trades simplified everything for me with thier step by step tutorials, within six months I made more than I expected .</p>
+            </div>
+  
+  
+            <div class="footer">
+              <div class="social_icon">
+                <button><i class="fa-brands fa-twitter"></i></button>
+                <button><i class="fa-brands fa-instagram"></i></button>
+                <button><i class="fa-brands fa-whatsapp"></i></button>
+              </div>
+  
+              <div class="btn">
+                <button>Read More...</button>
+              </div>
+            </div>
+  
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+
+
+
+<section class="gridSection" data-aos="fade-up">
+    <div class="sectionDesc newsletterDesc">
+        <h1 class="sectionHeader" data-aos="fade-down">Subscribe news!</h1>
+        <p class="sectionPara" data-aos="fade-down">
+            This is where crypto news websites come in handy and stay up-to-date this sphere.
+        </p>
+        <form action="#" class="newsletter">
+            <input type="email" name="" id="newsletter" placeholder="enter your email">
+            <button type="submit" class="btn primaryBtn">Subscribe</button>
+        </form>
+    </div>
+    <div class="sectionPic bouncepic newsletterPic">
+        <img data-aos="fade-up" src="{% static 'img/newsletter.png' %}" alt="">
+    </div>
+</section>
+{% endblock %}
+
