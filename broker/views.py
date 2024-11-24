@@ -242,6 +242,11 @@ def resetpassword(request):
 def plans(request):
     return render(request, 'plans.html')
 
+def privacyPolicy(request):
+    return render(request, 'privacy-policy.html')
+
+def licensing(request):
+    return render(request, 'licensing.html')
 
 def contactus(request):
     if request.method == "POST":

@@ -5,6 +5,8 @@ from . import api
 
 urlpatterns = [
     path('', index, name='home'),
+    path('privacyPolicy/', privacyPolicy, name='privacy-policy'),
+    path('licensing/', licensing, name='licensing'),
     path('api/create_support/', api.create_support, name='api_create_support'),
     path('dashboard/', dashboard, name='dashboard'),
     path('profile/', profile, name='profile'),

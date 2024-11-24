@@ -220,22 +220,22 @@ cb=googleTranslateElementInit">
 
             <div class="footerlink">
                 <h1 class="linkTitle">Service</h1>
-                <a href="#" class="eachLink">Mining</a>
-                <a href="#" class="eachLink">Control Data</a>
-                <a href="#" class="eachLink">Design</a>
-                <a href="#" class="eachLink">Security</a>
+                {% comment %} <a href="#" class="eachLink">Mining</a> {% endcomment %}
+                <a href="{% url "privacy-policy" %}" class="eachLink">Privacy Policy</a>
+                {% comment %} <a href="#" class="eachLink">Design</a> {% endcomment %}
+                <a href="{% url "privacy-policy" %}" class="eachLink">Security</a>
             </div>
 
             <div class="footerlink">
                 <h1 class="linkTitle">Resource</h1>
                 <a href="#" class="eachLink">Style Guide</a>
                 <a href="#" class="eachLink">Change Log</a>
-                <a href="#" class="eachLink">License</a>
+                <a href="{% url "licensing" %}" class="eachLink">License</a>
             </div>
         </div>
 
         <div class="footerCopyright">
-             <p>&copy; 2023 design and developed by <a href="#" class="developedBy">Programming Insider</a>.</p>
+             <p>&copy; 2024 Alpha Trade. All Rights reserved.</p>
         </div>
     </footer>
     
