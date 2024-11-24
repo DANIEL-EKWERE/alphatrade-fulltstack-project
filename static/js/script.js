@@ -152,3 +152,52 @@ function copyToClipboard() {
 
 
 
+// $(window).load(function(){
+//     $(".preloader").hide();
+//     // $("#webpage"").show();
+//   })
+
+// document.addEventListener("DOMContentLoaded", () => {
+//     // Wait until the entire page is fully loaded
+//     window.onload = () => {
+//         const preloader = document.querySelector(".preloader");
+
+//         // Add a class to hide the preloader with animation
+//         preloader.classList.add("hidden");
+//     };
+// });
+
+
+// window.onload = () => {
+//     document.querySelector(".preloader").style.display = "none";
+// };
+
+
+
+var myVar;
+
+function myFunction() {
+  myVar = setTimeout(showPage, 3000);
+}
+
+function showPage() {
+    document.getElementById("loader").style.display = "none";
+//   document.getElementById("preloader").style.display = "none";
+}
+
+
+// Define variables for preloader handling
+var preloaderTimeout;
+
+function startPreloader() {
+    // Set a timeout to simulate page loading
+    preloaderTimeout = setTimeout(hidePreloader, 3000); // Adjust time as needed
+}
+
+function hidePreloader() {
+    // Hide the preloader by setting its display to "none"
+    const preloader = document.querySelector(".preloader");
+    preloader.style.display = "none";
+}
+// Start the preloader function when the page starts loading
+window.onload = startPreloader;
