@@ -15,7 +15,7 @@ urlpatterns = [
     path('withdraw/', withdraw, name='withdraw'),
     path('withdrawcrypto/', withdrawcrypto, name='withdraw-crypto'),
     path('plans/', plans, name='plans'),
-
+    path('subscribe/', subscribe, name='subscribe'),
     path('signin/', signin, name='signin'),
     path('signup/', signup, name='signup'),
     path('resetpassword/', resetpassword, name='reset-password'),

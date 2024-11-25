@@ -88,3 +88,9 @@ class ContactUs(models.Model):
 
     def __str__(self):
         return self.full_name
+    
+class Subscribe(models.Model):
+    email = models.EmailField(max_length=254)
+
+    def __str__(self):
+        return self.email
