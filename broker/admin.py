@@ -1,5 +1,5 @@
 from django.contrib import admin
-from broker.models import Account, Dashboard,Histotry,Withdraw,Deposit,Investment
+from broker.models import Account, Dashboard,Histotry,Withdraw,Deposit,Investment,Subscribe
 from django.contrib.auth.models import User
 from django.contrib.auth.admin import UserAdmin
 # Register your models here.
@@ -21,3 +21,4 @@ admin.site.register(Histotry)
 admin.site.register(Withdraw)
 admin.site.register(Deposit)
 admin.site.register(Investment)
+admin.site.register(Subscribe)
