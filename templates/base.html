@@ -212,10 +212,10 @@ cb=googleTranslateElementInit">
 
             <div class="footerlink">
                 <h1 class="linkTitle">Explore</h1>
-                <a href="#" class="eachLink">About us</a>
-                <a href="#" class="eachLink">FAQ</a>
-                <a href="#" class="eachLink">Blog</a>
-                <a href="#" class="eachLink">Contact</a>
+                <a href="{% url "about" %}" class="eachLink">About us</a>
+                {% comment %} <a href="#" class="eachLink">FAQ</a>
+                <a href="#" class="eachLink">Blog</a> {% endcomment %}
+                <a href="{% url "contact" %}" class="eachLink">Contact</a>
             </div>
 
             <div class="footerlink">
@@ -228,8 +228,8 @@ cb=googleTranslateElementInit">
 
             <div class="footerlink">
                 <h1 class="linkTitle">Resource</h1>
-                <a href="#" class="eachLink">Style Guide</a>
-                <a href="#" class="eachLink">Change Log</a>
+                {% comment %} <a href="#" class="eachLink">Style Guide</a>
+                <a href="#" class="eachLink">Change Log</a> {% endcomment %}
                 <a href="{% url "licensing" %}" class="eachLink">License</a>
             </div>
         </div>
