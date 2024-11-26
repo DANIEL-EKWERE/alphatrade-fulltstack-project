@@ -28,7 +28,7 @@ class Histotry(models.Model):
     status = models.CharField(max_length=50,choices=[('PENDING','PENDING'),('DECLINED','DECLINED'),('APPROVED','APPROVED')],default='PENDING')
 
     def __str__(self):
-        return self.user.name
+        return self.user.username
     
 
 class Deposit(models.Model):
@@ -78,7 +78,7 @@ class Investment(models.Model):
     monthly = models.CharField(max_length=50)
 
     def __str__(self):
-        return self.user.name
+        return self.user.username
     
 
 class ContactUs(models.Model):
