@@ -44,6 +44,13 @@ def dashboard(request):
         deposits = Deposit.objects.filter(user=user).order_by("-date")
         withdraws = Withdraw.objects.filter(user=user)
         profile = Account.objects.get(user=user)
+        for x in deposits:
+            if x.status == "APPROVED":
+                details.deposit_wallet_balance += int(x.amount)
+
+        for x in withdraws:
+            if x.status == "APPROVED":
+                details.deposit_wallet_balance -= int(x.amount)
         
         # if withdraws.amount == 0.0:
         #     print(0)
